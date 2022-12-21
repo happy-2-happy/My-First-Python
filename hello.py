@@ -1,8 +1,12 @@
 # pylint: disable=missing-module-docstring
 # pylint: disable=redefined-builtin
 # pylint: disable=invalid-name
+import logging
+import logging.config
 from arithmetic import multiply
 from exception import exception
+
+logging.config.fileConfig(fname='logging.conf', disable_existing_loggers=False)
 print('Hello World')
 
 # patient_name = input("What is your name?\t")
@@ -38,3 +42,11 @@ for number in range(5):
 print(multiply(2, 5, 5, 4))
 
 exception()
+print(logging.getLogger())
+logging.basicConfig(level=logging.DEBUG)
+print(logging.getLogger())
+logging.debug('Debug')
+logging.info('Info')
+logging.warning('Warning')
+logging.error('Error')
+logging.critical('Critical')
