@@ -3,10 +3,12 @@
 # pylint: disable=invalid-name
 import logging
 import logging.config
+import pydash
 from arithmetic import multiply
 from exception import exception
 
-logging.config.fileConfig(fname='logging.conf', disable_existing_loggers=False)
+logging.config.fileConfig(fname='logging.conf',
+                          disable_existing_loggers=False)
 print('Hello World')
 
 # patient_name = input("What is your name?\t")
@@ -50,3 +52,6 @@ logging.info('Info')
 logging.warning('Warning')
 logging.error('Error')
 logging.critical('Critical')
+
+print("123".__eq__("1234"))
+print(pydash.capitalize("gokulram"))
